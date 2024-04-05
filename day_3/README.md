@@ -5,7 +5,7 @@ Here's a checklist for this week's tasks:
 ## Practice
 
 - Solve rustlings exercises.
-  - [ ] generics
+  - [x] generics
   - [ ] traits
   - [ ] quiz 3
   - [ ] lifetimes
