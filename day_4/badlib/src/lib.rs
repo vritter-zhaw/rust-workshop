@@ -35,7 +35,7 @@ pub fn dangerous_cast(n: i64) -> Result<i32, TryFromIntError> {
 /// Tries to add two numbers
 pub fn add(left: usize, right: usize) -> usize {
     // I don't know how to add two numbers...
-    left - right
+    left + right
 }
 
 #[cfg(test)]
