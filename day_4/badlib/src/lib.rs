@@ -5,7 +5,7 @@
 //! We will incrementally build a CI pipeline to discover
 //! how CI can help us make sure our Rust code is squeaky clean.
 
-use std::{convert::Infallible, num::TryFromIntError};
+use std::num::TryFromIntError;
 
 /// This was a badly formatted fucntion
 pub fn badly_formatted() {
