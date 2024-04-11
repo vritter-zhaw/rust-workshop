@@ -8,7 +8,7 @@
 //! Lastly, fix the warnings. Some are even auto-fixable!
 //! See if your editor let's you apply these fixes.
 
-pub fn get_first_two_elems(v: &Vec<i32>) -> (i32, i32) {
+pub fn get_first_two_elems(v: &[i32]) -> (i32, i32) {
     (v[0], v[1])
 }
 
@@ -21,7 +21,7 @@ pub fn floats_are_similar(a: f32, b: f32) -> bool {
 }
 
 pub fn decrement(x: i32) -> i32 {
-    x-1
+    x - 1
 }
 
 pub fn read_int_from_str(s: &str) -> i32 {
@@ -29,5 +29,5 @@ pub fn read_int_from_str(s: &str) -> i32 {
 }
 
 pub fn get_one_quintillion() -> u64 {
-    10_000_000_000_000_000
+    1_000_000_000_000_000
 }
