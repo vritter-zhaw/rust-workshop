@@ -21,14 +21,14 @@ pub fn clippy_doesnt_like_this() {
 }
 
 /// This function casts i64 to i32
-pub fn dangerous_cast(n: i64) -> Result<i32,TryFromIntError> {
+pub fn dangerous_cast(n: i64) -> Result<i32, TryFromIntError> {
     // In my opinion, the `as` keyword should be used sparingly.
     // This conversion is lossy and may not do what you expect.
     // It is better to replace it with `.try_into()` and return
     // a `Reslut<i64, _>` instead.
     //
     // But as always, let's get CI to complain about it before we fix it.
-    let b:Result<i32,_> = n.try_into();
+    let b: Result<i32, _> = n.try_into();
     b
 }
 
