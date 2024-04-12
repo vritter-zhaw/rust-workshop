@@ -1,9 +1,10 @@
 [package]
 name = "paekli-cli"
-version = "0.1.4"
+version = "0.1.5"
 edition = "2021"
 repository = "https://github.com/vritter-zhaw/rust-workshop"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+clap = { version = "4.5.4", features = ["derive"] }
