@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hamlo i bims ens rost!");
+    println!("Hamlo i bims ens rost brogramm!");
 }
