@@ -26,7 +26,8 @@ fn die_for_the_glory_of_the_queen(bee: Bee) -> u32 {
     bee.nectar
 }
 
-#[cfg(deactivated)] // remove this line to activate the tests
+/*
+// remove this line to activate the tests
 mod tests {
     use super::*;
 
@@ -72,3 +73,4 @@ fn exercise_was_started() {
 "
     )
 }
+*/

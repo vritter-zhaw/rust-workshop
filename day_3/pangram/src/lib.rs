@@ -59,7 +59,7 @@
 pub fn is_pangram(sentence: &str) -> bool {
     todo!("Is {sentence} a pangram?");
 }
-
+/*
 #[cfg(deactivated)] // remove this line to activate the tests
 mod tests {
     #![allow(unused)]
@@ -151,3 +151,4 @@ fn exercise_was_started() {
 "
     )
 }
+*/
