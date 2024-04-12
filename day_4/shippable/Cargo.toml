@@ -1,8 +1,7 @@
 [package]
-name = "methods"
+name = "shippable"
 version = "0.1.0"
 edition = "2021"
-repository = "https://github.com/vritter-zhaw/rust-workshop"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

@@ -2,6 +2,7 @@
 name = "pangram"
 version = "0.1.0"
 edition = "2021"
+repository = "https://github.com/vritter-zhaw/rust-workshop"
 description = "yoinked from https://github.com/exercism/rust/tree/main/exercises/practice/pangram"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
