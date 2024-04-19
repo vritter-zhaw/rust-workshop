@@ -1,7 +1,9 @@
 use anyhow::Context;
+use chrono;
 use clap::{Parser, Subcommand};
 use std::fs::{self, read_to_string};
 use std::{fs::read, path::Path};
+
 /// send and receive joy with ✨ paekli-cli ✨
 
 #[derive(Subcommand)]
@@ -25,14 +27,32 @@ fn main() -> anyhow::Result<()> {
 
     match args.command {
         Command::Send { content } => {
-            if !Path::exists(&storage_dir.join("content")) {
-                std::fs::write(storage_dir.join("content"), content)
+            let time = chrono::offset::Local::now();
+            let custom_time = time.format("%Y%m%y_%H%M%S");
+            if !Path::exists(&storage_dir.join(custom_time.to_string())) {
+                std::fs::write(storage_dir.join(custom_time.to_string()), content)
                     .context("failed to store paekli")?;
             } else {
                 return Err(anyhow::anyhow!("Paekli Storage is full"));
             }
         }
         Command::Receive => {
+            let mut paths: Vec<_> = fs::read_dir(storage_dir)
+                .unwrap()
+                .map(|r| r.unwrap())
+                .collect();
+            if !paths.is_empty() {
+                paths.sort_by_key(|dir| dir.path());
+                match read_to_string(storage_dir.join(paths[0].path())) {
+                    Ok(contents) => println!("Paekli content: \n{}", contents),
+                    Err(e) => println!("Error reading Paekli Storage:{}", e),
+                }
+                std::fs::remove_file(storage_dir.join(paths[0].path()))
+                    .context("failed to remove storage")?;
+            } else {
+                return Err(anyhow::anyhow!("Paekli Storage is empty :"));
+            }
+            /*
             if Path::exists(&storage_dir.join("content")) {
                 match read_to_string(storage_dir.join("content")) {
                     Ok(contents) => println!("Paekli content: \n{}", contents),
@@ -43,6 +63,7 @@ fn main() -> anyhow::Result<()> {
             } else {
                 return Err(anyhow::anyhow!("Paekli Storage is empty :("));
             }
+            */
         }
     }
     Ok(())
